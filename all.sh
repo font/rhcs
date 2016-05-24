@@ -1,11 +1,11 @@
 #!/bin/bash
 
-DIR=/srv/ceph
-VAR=/srv/ceph-var
-ETC=/etc/ceph
-IP=10.1.4.10
-NET=10.1.4.0/24
-IMAGE=rhcs
+DIR=/home/ifont/srv/ceph
+VAR=/home/ifont/srv/ceph-var
+ETC=/home/ifont/srv/etc/ceph
+IP=192.168.1.15
+NET=192.168.1.0/24
+IMAGE='font/rhcs:v2.0'
 
 rm -rf ${VAR}/* ${ETC}/*
 
