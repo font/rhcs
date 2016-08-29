@@ -24,7 +24,7 @@ rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
 rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*; \
-yum -y install ceph-mon ceph-osd ceph-mds ceph-radosgw rbd-mirror nfs-ganesha-rgw --nogpgcheck; yum clean all
+yum -y install ceph-mon ceph-osd ceph-mds ceph-radosgw rbd-mirror nfs-ganesha-rgw; yum clean all
 
 # Editing /etc/redhat-storage-server release file
 RUN echo "Red Hat Ceph Storage Server 2.0 (Container)" > /etc/redhat-storage-release

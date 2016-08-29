@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+set -x
 
 : ${CLUSTER:=ceph}
 : ${CEPH_CLUSTER_NETWORK:=${CEPH_PUBLIC_NETWORK}}
@@ -405,7 +406,7 @@ function osd_disk_prepare {
     exit 1
   fi
 
-  timeout 10 ceph ${CEPH_OPTS} --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/${CLUSTER}.keyring health || exit 1
+  timeout 10 ceph --verbose ${CEPH_OPTS} --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/${CLUSTER}.keyring health || exit 1
 
   mkdir -p /var/lib/ceph/osd
   chown ceph. /var/lib/ceph/osd
